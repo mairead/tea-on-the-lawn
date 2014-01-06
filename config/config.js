@@ -1,4 +1,4 @@
-var MONGOHQ_URL="mongodb://mairead:fantasia@dharma.mongohq.com:10031/tea-on-the-lawn"
+var MONGOHQ_URL="mongodb://alice:whiterabbit@dharma.mongohq.com:10031/tea-on-the-lawn"
 
 var path = require('path'),
     rootPath = path.normalize(__dirname + '/..'),
