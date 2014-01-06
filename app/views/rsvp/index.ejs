@@ -1,0 +1,99 @@
+<% layout('../layout') -%>
+
+<h1>Please RSVP as soon as you can. Thanks</h1>
+<div id="sorry-msg" class="sorry-msg">
+	<h2>Sorry, </h2>
+	We're sorry you can't make it but we hope we can catch up another time. 
+</div>
+
+<div class="form-questions" id="form-questions">
+
+	<p>We have a selection of questions that we would like you to answer so we can make our final arrangements. Please can you let us know the answers as soon as possible. If you don’t do it now, we’ll just keep pestering you on a weekly basis until you do. We have a database. We know who you are. </p>
+
+	<form>
+		<div class="form-section">
+			<h2>RSVP</h2>
+			<div class="form-row">
+				<label>1. Tell us your name(s)?</label>
+				<input type="text" class="text" />
+			</div>
+
+			<div class="form-row">
+				<p class="label">2. Are you able to attend?</p>
+				<label>
+					<input type="radio" class="radio" name="attending" value="y" />Yes
+				</label>
+				<label>
+					<input type="radio" class="radio" name="attending" value="n" />No
+				</label>
+			</div>
+
+			<div class="form-row">
+				<p class="label">3. Are you bringing a live in vehicle?</p>
+				<label>
+					<input type="radio" class="radio" name="live-in" value="y" />Yes
+				</label>
+				<label>
+					<input type="radio" class="radio" name="live-in" value="n" />No
+				</label>
+			</div>
+		</div>
+
+		<div class="form-section">
+		<h2>Help us</h2>
+			<div class="form-row">
+				<p class="label">4. Would you like to offer us some help on Saturday?</p>
+				<label>
+					<input type="radio" class="radio" name="help" value="y" />Yes
+				</label>
+				<label>
+					<input type="radio" class="radio" name="help" value="n" />No
+				</label>
+				<label>If so, can you give us a rough idea of when you will be arriving (Day and time)?</label>
+				<input type="text" class="text" />
+			</div>
+		</div>
+
+		<div class="form-section">
+			<h2>Food</h2>
+			<div class="form-row">
+				<p class="label">5. Will you be bringing any children and if so can you tell us their age(s)</p>
+				<label>
+					<input type="radio" class="radio" name="kids" value="y" />Yes
+				</label>
+				<label>
+					<input type="radio" class="radio" name="kids" value="n" />No
+				</label>
+				<label>No. of kids</label>
+				<input type="text" class="text" />
+			</div>
+
+			<div class="form-row">
+				<p class="label">6. Would you like to be included for BBQ food on Friday night at 6pm?</p>
+				<label>
+					<input type="radio" class="radio" name="bbq" value="y" />Yes
+				</label>
+				<label>
+					<input type="radio" class="radio" name="bbq" value="n" />No
+				</label>
+			</div>
+
+			<div class="form-row">
+				<p class="label">7. Would you like breakfast in the pub on Saturday morning at 11am?</p>
+				<p class="small">(Places limited. First come, first served)</p>
+				<label>
+					<input type="radio" class="radio" name="breakfast" value="y" />Yes
+				</label>
+				<label>
+					<input type="radio" class="radio" name="breakfast" value="n" />No
+				</label>
+			</div>
+
+			<div class="form-row">
+				<label>8. Do you have any special dietary requirements we should tell our caterers?</label>
+				<p class="small">(Gluten free, Vegetarian, Allergies etc.)</p>
+				<input type="text" class="text" />
+			</div>
+		</div>
+	</form>
+</div>

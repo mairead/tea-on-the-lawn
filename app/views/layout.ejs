@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" >
+<meta name="viewport" content="width=device-width">
+
+<title><%= title %></title>
+<!-- CSS -->
+<link rel="stylesheet" href="/css/application.css" type="text/css" media="screen" >
+
+</head>
+<body>
+  <!-- navigation partial --> 
+  <nav class="navigation">
+    <%-partial('navigation')%>
+  </nav>
+  <section class="main-content">
+    <%-body -%>
+  </section>
+  <footer>
+    <%-partial('footer')%>
+  </footer>
+</body>
+</html>

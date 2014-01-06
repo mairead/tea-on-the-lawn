@@ -1,0 +1,58 @@
+@import "lib/bourbon/bourbon";
+@import "lib/bitters/bitters";
+@import "lib/neat/neat";
+
+h1, h2, h3, h4{
+	margin-bottom:0.5em;
+}
+
+.form-row{
+	margin: 0 0 2em 0;
+	.small{margin-top:-0.5em;}
+}
+
+.form-section{
+	margin-top:2.5em;
+}
+
+.small{font-size: 0.8em}
+.label{font-weight: bold}
+
+//outer shell
+%outer-shell{
+	@include outer-container;
+	*zoom: 1;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  @include clearfix;
+}
+
+//navigation
+.navigation{
+	@extend %outer-shell;
+	text-align: center;
+	border-bottom:1px solid;
+	margin-bottom:1em;
+	li{
+		display: inline;
+	}
+	a{
+		display: inline-block;
+		padding:1em;
+	}
+}
+
+//grid structure
+.main-content{
+	@extend %outer-shell;
+}
+
+//footer
+.footer{
+	border-top:1px solid;
+	margin-top:1em;
+	padding:1em 0;
+	@extend %outer-shell;
+}
+
