@@ -27,7 +27,7 @@ var config = {
       name: 'website'
     },
     port: 3000,
-    db: 'mongodb://localhost/website-production'
+    db: 'MONGOHQ_URL'
   }
 };
 
