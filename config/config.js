@@ -29,7 +29,7 @@ var config = {
       name: 'website'
     },
     port: 3000,
-    db: 'MONGOHQ_URL'
+    db: MONGOHQ_URL
   }
 };
 
