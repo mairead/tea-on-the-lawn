@@ -1,3 +1,5 @@
+var MONGOHQ_URL="mongodb://mairead:fantasia@dharma.mongohq.com:10031/tea-on-the-lawn"
+
 var path = require('path'),
     rootPath = path.normalize(__dirname + '/..'),
     env = process.env.NODE_ENV || 'development';
@@ -27,7 +29,7 @@ var config = {
       name: 'website'
     },
     port: 3000,
-    db: 'mongodb://localhost/website-production'
+    db: 'MONGOHQ_URL'
   }
 };
 
