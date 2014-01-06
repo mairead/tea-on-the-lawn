@@ -1,3 +1,4 @@
+console.log("app.js starting")
 var express = require('express'),
   mongoose = require('mongoose'),
   fs = require('fs'),
