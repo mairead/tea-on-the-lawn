@@ -1,4 +1,3 @@
-console.log("app.js starting")
 var express = require('express'),
   mongoose = require('mongoose'),
   fs = require('fs'),
@@ -19,7 +18,11 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 
 var app = express();
 
+// exports.db = db;
+
 require('./config/express')(app, config);
 require('./config/routes')(app);
 
 app.listen(process.env.PORT || 3000);
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" >
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>RSVP responses</title>
+<!-- CSS -->
+<link rel="stylesheet" href="/css/application.css" type="text/css" media="screen" >
+
+</head>
+<body>
+	<div class="rsvp-section">
+		<table>
+			<tr>
+				<th>Name(s)</th>
+				<th>Attending</th>
+				<th>Live in</th>
+				<th>Help</th>
+				<th>Arriving</th>
+				<th>BBQ</th>
+				<th>Breakfast</th>
+				<th>Allergies</th>
+				<th>Delete</th>
+			</tr>
+			<% replies.forEach(function(reply){ %>
+				<tr>
+					<td><%= reply.names %></td>
+					<td><%= reply.attending  === undefined ? '' : reply.attending %></td>
+					<td><%= reply.livein  === undefined ? '' : reply.livein  %></td>
+					<td><%= reply.help  === undefined ? '' : reply.help  %></td>
+					<td><%= reply.arriving  %></td>
+					<td><%= reply.bbq  === undefined ? '' : reply.bbq  %></td>
+					<td><%= reply.breakfast  === undefined ? '' : reply.breakfast %></td>
+					<td><%= reply.allergies %></td>
+					<td><a href="/delete/<%= reply._id %>" class="submit btn">Delete</a></td>
+				</tr>
+			<% }); %>
+		</table>
+	</div>
+</body>
+</html>

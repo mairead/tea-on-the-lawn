@@ -1,6 +1,7 @@
 var express = require('express'),
     engine = require('ejs-locals');
 
+
 module.exports = function(app, config) {
   app.configure(function () {
     app.use(express.compress());
@@ -15,7 +16,10 @@ module.exports = function(app, config) {
     app.use(express.methodOverride());
     app.use(app.router);
     app.use(function(req, res) {
-      res.status(404).render('404', { title: '404' });
+      res.status(404).render('404', { title: '404', navtitle: '404' });
     });
   });
 };
+
+
+

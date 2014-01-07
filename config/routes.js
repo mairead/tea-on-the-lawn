@@ -1,5 +1,6 @@
-module.exports = function(app){
+// var db = require("../app").db;
 
+module.exports = function(app){
 	//home route
 	var invitation = require('../app/controllers/invitation');
 	app.get('/', invitation.index);
@@ -18,5 +19,9 @@ module.exports = function(app){
 
 	var rsvp = require('../app/controllers/rsvp');
 	app.get('/rsvp', rsvp.index);
-
+	app.post('/reply', rsvp.reply);
+	app.get('/thanks', rsvp.thanks);
+	app.get('/failure', rsvp.failure);
+	app.get('/replies', rsvp.replies);
+	app.get('/delete/:id', rsvp.delete);
 };

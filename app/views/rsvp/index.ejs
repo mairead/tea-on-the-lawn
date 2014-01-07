@@ -12,13 +12,13 @@
 		<h2>RSVP</h2>
 		<p>We have a selection of questions that we would like you to answer so we can make our final arrangements. Please can you let us know the answers as soon as possible. If you don’t do it now, we’ll just keep pestering you on a weekly basis until you do. We have a database. We know who you are. </p>
 
-		<form>
+		<form action="/reply" method="POST">
 			<div class="form-section">
 				<h2>Your response</h2>
 				<div class="form-row">
 					<label>1. Tell us your name(s)?</label>
-					<p class="small">(If you're replying for more than yourself please can we have everyone's name so we can get a head count)</p>
-					<input type="text" class="text" />
+					<p class="small">(If you're replying for more than yourself please can we have everyone's name, including kids, so we can get a head count)</p>
+					<input type="text" class="text" name="names"/>
 				</div>
 
 				<div class="form-row">
@@ -34,10 +34,10 @@
 				<div class="form-row">
 					<p class="label">3. Are you bringing a live in vehicle?</p>
 					<label>
-						<input type="radio" class="radio" name="live-in" value="y" />Yes
+						<input type="radio" class="radio" name="livein" value="y" />Yes
 					</label>
 					<label>
-						<input type="radio" class="radio" name="live-in" value="n" />No
+						<input type="radio" class="radio" name="livein" value="n" />No
 					</label>
 				</div>
 			</div>
@@ -52,8 +52,8 @@
 					<label>
 						<input type="radio" class="radio" name="help" value="n" />No
 					</label>
-					<label>If so, can you give us a rough idea of when you will be arriving (Day and time)?</label>
-					<input type="text" class="text" />
+					<label>If yes, can you give us a rough idea of when you will be arriving (Day and time)?</label>
+					<input type="text" class="text" name="arriving"/>
 				</div>
 			</div>
 
@@ -84,7 +84,11 @@
 				<div class="form-row">
 					<label>7. Do you have any special dietary requirements we should tell our caterers?</label>
 					<p class="small">(Gluten free, Vegetarian, Allergies etc.)</p>
-					<input type="text" class="text" />
+					<input type="text" class="text" name="allergies"/>
+				</div>
+
+				<div class="form-row btn-row">
+					<input type="submit" value="RSVP" class="submit btn"/>
 				</div>
 			</div>
 		</form>

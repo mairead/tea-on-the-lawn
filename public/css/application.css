@@ -360,24 +360,48 @@ h2 {
 .label {
   font-weight: bold; }
 
+a {
+  color: #191105; }
+
+.btn {
+  border: 1px solid #2459a6;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 #89a8d5;
+  color: white;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  background-color: #477dca;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #477dca), color-stop(100%, #2760b2));
+  background-image: -webkit-linear-gradient(#477dca, #2760b2);
+  background-image: linear, false, #477dca, #2760b2;
+  padding: 7px 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #1b4f9a;
+  background-clip: padding-box;
+  font-size: 1em; }
+
 body {
   color: #786d59;
   background: #cebba3; }
-
-.form-row {
-  margin: 0 0 2em 0; }
-  .form-row .small {
-    margin-top: -0.5em; }
-
-.form-section {
-  margin-top: 2.5em; }
 
 .content-section {
   padding-bottom: 3em;
   width: 377px;
   margin: 0 auto; }
 
-.navigation, .main-content, .footer {
+.rsvp-section {
+  padding: 50px; }
+  .rsvp-section table {
+    border-top: 1px solid white;
+    border-left: 1px solid white; }
+  .rsvp-section td, .rsvp-section th {
+    border-color: white;
+    text-align: center;
+    border-right: 1px solid white;
+    padding: 0.75em; }
+
+.main-content, .navigation, .footer {
   *zoom: 1;
   max-width: 68em;
   margin-left: auto;
@@ -398,6 +422,16 @@ body {
     display: table; }
   %outer-shell:after {
     clear: both; }
+
+
+.content-shim {
+  background: #ffefd9 url(../img/banner-shim.png) center top repeat-y;
+  background-size: 768px 18px; }
+
+.content-inner {
+  background: url(../img/banner.png) center top no-repeat;
+  background-size: 768px 614px;
+  padding-top: 100px; }
 
 .navigation {
   padding-left: 24px;
@@ -428,15 +462,16 @@ body {
   .navigation .rsvp a {
     color: #e65d4b; }
 
+.form-row {
+  margin: 0 0 2em 0; }
+  .form-row .small {
+    margin-top: -0.5em; }
 
-.content-shim {
-  background: #ffefd9 url(../img/banner-shim.png) center top repeat-y;
-  background-size: 768px 18px; }
+.form-section {
+  margin-top: 2.5em; }
 
-.content-inner {
-  background: url(../img/banner.png) center top no-repeat;
-  background-size: 768px 614px;
-  padding-top: 100px; }
+.btn-row {
+  text-align: center; }
 
 .invitation-design {
   margin: 0 auto;
