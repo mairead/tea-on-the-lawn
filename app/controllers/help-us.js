@@ -6,7 +6,8 @@ exports.index = function(req, res){
     if(err) throw new Error(err);
     res.render('help-us/index', {
       title: 'Tea on the lawn - We need your help',
-      articles: articles
+      articles: articles,
+      title: 'help-us'
     });
   });
 };

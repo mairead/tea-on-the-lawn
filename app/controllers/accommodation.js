@@ -5,7 +5,8 @@ exports.index = function(req, res){
   Article.find(function(err, articles){
     if(err) throw new Error(err);
     res.render('accommodation/index', {
-      title: 'Tea on the lawn - accommodation'
+      title: 'Tea on the lawn - accommodation',
+      title: 'accommodation'
     });
   });
 };

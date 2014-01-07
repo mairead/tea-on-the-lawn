@@ -11,9 +11,53 @@
 @import "lib/bitters/bitters";
 @import "lib/neat/neat";
 
+//utilities
+/* re-usable css objects */
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr; 
+  br{
+    display: none;
+  }
+}
+
+.hidden { display: none !important; visibility: hidden; }
+
+html.js .hide-js { display: none !important; visibility: hidden; }
+.hide-no-js { display: none !important; visibility: hidden; }
+html.js .hide-no-js { display: block !important; visibility: visible; }
+
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+
+%horizontal-navigation{
+   li{float:left}
+}
+
+.clear{clear:both}
+
+.float-right{float:right;clear:both}
+.float-left{float:left;clear:both}
+
+.break-word {word-wrap: break-word;}
 
 //typography
-
 @font-face {
   font-family: 'trinigan_fgregular';
   src: url('../fonts/trinigan-webfont.eot');
@@ -39,7 +83,7 @@ h1, h2, h3, h4{
 
 h2{
 	font-size: 2.5em;
-	padding-bottom:.2em;
+	padding-bottom:.4em;
 	background: url(../img/h1-border.png) bottom center no-repeat;
 }
 
@@ -101,16 +145,22 @@ body{ color: #786D59; background:#cebba3 }
 		display: inline;
 	}
 	a{
-		color:#786D59;
+		color:#191105;
 		display: inline-block;
-		padding:10px .2em;
+		padding:10px 5px;
+		font-weight: bold;
+	}
+	.active a, .active.rsvp a{
+		color:#3f90a1;
+	}
+	.rsvp a{
+		color:#E65D4B;
 	}
 }
 
 //grid structure
 .main-content{
 	@extend %outer-shell;
-
 }
 
 .content-shim{
@@ -130,6 +180,11 @@ body{ color: #786D59; background:#cebba3 }
 	width:377px;
 }
 
+.invitation-img{
+	background:url(../img/invitation.png) 0 0 no-repeat; 
+	width:377px;
+	height:653px;
+}
 
 //footer
 .footer{

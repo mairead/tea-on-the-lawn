@@ -6,7 +6,8 @@ exports.index = function(req, res){
     if(err) throw new Error(err);
     res.render('rsvp/index', {
       title: 'Tea on the lawn - Please RSVP',
-      articles: articles
+      articles: articles,
+      title: 'rsvp'
     });
   });
 };

@@ -6,7 +6,8 @@ exports.index = function(req, res){
     if(err) throw new Error(err);
     res.render('food-and-drink/index', {
       title: 'Tea on the lawn - Food and drink',
-      articles: articles
+      articles: articles,
+      title: 'food-and-drink'
     });
   });
 };

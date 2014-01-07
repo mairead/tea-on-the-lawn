@@ -1,22 +1,24 @@
 <div class="nav-shim">
 	<ul>
-		<li>
+		<li class="<%= title === 'invitation' ? 'active' : '' %>">
 			<a href="/">Invitation</a>
 		</li>
-		<li>
+		<li class="<%= title === 'instructions' ? 'active' : '' %>">
 			<a href="/instructions">Instructions</a>
 		</li>
-		<li>
-			<a href="/food-and-drink">Food &amp; drink</a>
+		<li class="<%= title === 'food-and-drink' ? 'active' : '' %>">
+			<a href="/food-and-drink">Food and drink</a>
 		</li>
-		<li>
+		<li class="<%= title === 'accommodation' ? 'active' : '' %>">
 			<a href="/accommodation">Accommodation</a>
 		</li>
-		<li>
-			<a href="/help-us">We need your help</a>
+		<li class="<%= title === 'help-us' ? 'active' : '' %>">
+			<a href="/help-us">Help us</a>
 		</li>
-		<li>
+		<li class="rsvp <%= title === 'rsvp' ? 'active' : '' %>">
 			<a href="/rsvp">Please RSVP</a>
 		</li>
 	</ul>
 </div>
+
+

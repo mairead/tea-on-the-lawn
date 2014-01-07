@@ -6,7 +6,8 @@ exports.index = function(req, res){
     if(err) throw new Error(err);
     res.render('instructions/index', {
       title: 'Tea on the lawn - instructions',
-      articles: articles
+      articles: articles,
+      title: 'instructions'
     });
   });
 };
