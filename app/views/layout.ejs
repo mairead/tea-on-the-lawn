@@ -14,11 +14,13 @@
   <nav class="navigation">
     <%-partial('navigation')%>
   </nav>
-  <section class="main-content">
-    <%-body -%>
-  </section>
-  <footer>
-    <%-partial('footer')%>
-  </footer>
+  <div class="main-content">
+    <div class="content-shim">
+      <div class="content-inner">
+        <%-body -%>
+      </div>
+    </div>
+  </div>
+  <%-partial('footer')%>
 </body>
 </html>
