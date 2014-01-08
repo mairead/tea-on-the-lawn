@@ -511,6 +511,9 @@ body {
   .map-canvas img {
     max-width: none; }
 
+.info-window {
+  width: 250px; }
+
 .directions-list li {
   margin-bottom: 0.5em; }
 
