@@ -401,7 +401,9 @@ button, input[type="submit"], .btn {
 
 body {
   color: #786d59;
-  background: #cebba3; }
+  background: #cebba3;
+  padding: 0;
+  margin: 0; }
 
 .content-section {
   padding-bottom: 3em;
@@ -528,27 +530,34 @@ body {
   display: none; }
 
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (max-width: 480px) {
-  /*	.map-canvas{
-		width:280px;
-	}
-	*/
+@media only screen and (max-width: 767px) {
   body {
-    background: #ffefd9;
-    padding: 0;
-    margin: 0; }
+    background: #ffefd9; }
+  .main-content, .navigation, .footer {
+    max-width: 100%; }
   .content-shim {
     background: none; }
   .content-inner {
     background: none;
-    padding: 20px; }
+    padding: 10px; }
+  .map-canvas {
+    width: 300px;
+    height: 300px; }
   .invitation-design {
-    max-width: 100%; }
+    width: 300px;
+    height: 520px; }
+  .invitation-img {
+    width: 300px;
+    height: 520px;
+    background-size: 300px 520px; }
+  .content-section {
+    width: 300px;
+    padding-bottom: 30px; }
   .navigation {
     background: none;
     border: 0;
     padding: 0;
-    margin-bottom: 20px; }
+    margin-bottom: 10px; }
     .navigation .nav-shim {
       background: none;
       padding: 0; }
