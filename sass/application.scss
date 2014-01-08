@@ -91,7 +91,7 @@ h2{
 
 .small{font-size: 0.8em}
 .label{font-weight: bold}
-.validation-msg{font-weight: bold; color: #E65D4B}
+.validation-msg, .rsvp-msg{font-weight: bold; color: #E65D4B}
 .required{font-size: 0.8em;color: #E65D4B}
 .dresscode{@extend %brand-font;color:#3f90a1;font-size:1.6em; line-height:1.2em;text-align: center; }
 
