@@ -38,6 +38,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: [
+          'public/js/*.js',
           'app.js',
           'app/**/*.js',
           'config/*.js'

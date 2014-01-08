@@ -25,7 +25,7 @@
   text-align: left;
   direction: ltr; 
   br{
-    display: none;
+	display: none;
   }
 }
 
@@ -62,12 +62,14 @@ html.js .hide-no-js { display: block !important; visibility: visible; }
   font-family: 'trinigan_fgregular';
   src: url('../fonts/trinigan-webfont.eot');
   src: url('../fonts/trinigan-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/trinigan-webfont.woff') format('woff'),
-       url('../fonts/trinigan-webfont.ttf') format('truetype'),
-       url('../fonts/trinigan-webfont.svg#trinigan_fgregular') format('svg');
+	   url('../fonts/trinigan-webfont.woff') format('woff'),
+	   url('../fonts/trinigan-webfont.ttf') format('truetype'),
+	   url('../fonts/trinigan-webfont.svg#trinigan_fgregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+
+
 
 %brand-font{
 	font-family: 'trinigan_fgregular';
@@ -89,6 +91,9 @@ h2{
 
 .small{font-size: 0.8em}
 .label{font-weight: bold}
+.validation-msg{font-weight: bold; color: #E65D4B}
+.required{font-size: 0.8em;color: #E65D4B}
+
 
 a{
 	color: #191105;
@@ -96,22 +101,35 @@ a{
 
 .btn{
 	border: 1px solid #2459a6;
-	border-radius: 3px;
+	border-radius: 5px;
 	box-shadow: inset 0 1px 0 0 #89a8d5;
 	color: white;
 	display: inline-block;
-	font-size: 11px;
+	font-size: 14px;
 	font-weight: bold;
 	background-color: #477dca;
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #477dca), color-stop(100%, #2760b2));
 	background-image: -webkit-linear-gradient(#477dca, #2760b2);
 	background-image: linear-gradient(#477dca, #2760b2);
-	padding: 7px 18px;
+	padding: 5px 12px;
 	text-decoration: none;
 	text-shadow: 0 1px 0 #1b4f9a;
 	background-clip: padding-box;
-	font-size: 1em;
+
+	&:hover, &:focus{
+		color:#fff;
+	}
 }
+
+//buttons
+button, input[type="submit"], .btn {
+	@include linear-gradient(to top, #82c0cd, #3f90a1);
+	border: 1px solid #3f90a1;
+	box-shadow: 0 1px 0 0 #82c0cd inset;
+	border-radius: 15px;
+}
+
+
 //structure
 body{ color: #786D59; background:#cebba3 }
 
@@ -124,16 +142,19 @@ body{ color: #786D59; background:#cebba3 }
 .rsvp-section{
 	padding:50px;
 	table{
-		border-top:1px solid #fff;
-		border-left:1px solid #fff;
+		border-top:1px solid #786D59;
+		border-left:1px solid #786D59;
 	}
 	td,th{
-		border-color:#fff;
+		background: #FFEFD9;
+		border-color:#786D59;
 		text-align: center;
-		border-right:1px solid #fff;
-		padding:.75em;
+		border-right:1px solid #786D59;
+		padding:.5em;
 	}
-
+	td{
+		background: #fff;
+	}
 }
 //outer shell
 %outer-shell{
@@ -180,7 +201,7 @@ body{ color: #786D59; background:#cebba3 }
 		position: relative;
 		top:15px;
 		margin-top:.5em;
-		border:1px solid #191105;	
+		border:1px solid #191105;   
 		background: #FFEFD9;
 
 	}
@@ -226,6 +247,20 @@ body{ color: #786D59; background:#cebba3 }
 	height:653px;
 }
 
+//map
+.map-canvas{
+	width:377px;
+	height:377px;
+	img{
+		max-width:none;
+	}
+}
+
+//directions 
+.directions-list li{
+	margin-bottom:.5em;
+}
+
 //footer
 .footer{
 	background: #786D59 url(../img/footer-top.png) 0 0 no-repeat;
@@ -239,3 +274,89 @@ body{ color: #786D59; background:#cebba3 }
 	}
 }
 
+//fouc - hide with CSS to begin with
+.js .sorry-msg{
+	display: none;
+}
+
+.js .validation-msg{
+	display: none;
+}
+
+
+//mobile view
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-width : 480px) {
+	body{
+		background: #FFEFD9;
+		padding:0;
+		margin: 0;
+	}
+	.content-shim{
+		background: none;
+	}
+
+	.content-inner{
+		background: none;
+		padding:20px;
+	}
+
+/*	.map-canvas{
+		width:280px;
+	}
+	*/
+	.invitation-design{
+		max-width: 100%;
+	}
+
+	.navigation{
+		background: none;
+		border:0;
+		padding:0;
+		margin-bottom:20px;
+		.nav-shim{
+			background: none;
+			padding:0;
+		}
+		ul{
+			border:0;
+			top:0;
+			margin: 0;
+		}
+		li{
+			display: block;
+			border-bottom:1px solid #fff;
+		}
+		a{
+			display: block;
+			background-color:#786D59;
+			color:#fff;
+			&:hover, &:focus{
+				background-color: #3f90a1;
+			}
+		}
+
+		.active a, .active.rsvp a{
+			color:#fff;
+			background-color: #3f90a1;
+		}
+		.rsvp a{
+			color: #fff;
+			background-color:#E65D4B;
+			&:hover, &:focus{
+				background-color: #3f90a1;
+			}
+		}
+	}
+
+	.footer{
+		background: #191105;
+		margin:0;
+		padding:20px;
+	}
+
+	h1, h2{
+//		background: none;
+	}
+}

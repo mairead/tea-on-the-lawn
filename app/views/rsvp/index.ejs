@@ -1,33 +1,52 @@
 <% layout('../layout') -%>
 
-<!-- <div id="sorry-msg" class="sorry-msg">
-	<h2>Sorry, </h2>
-	We're sorry you can't make it but we hope we can catch up another time. 
-</div> -->
+<div id="sorry-msg" class="sorry-msg">
+	<div class="content-section">
+		<h2>Sorry, </h2>
+		We're sorry you can't make it but we hope we can catch up another time.
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	</div> 
+</div>
 
 <div class="content-section">
 
 
 	<div class="form-questions" id="form-questions">
 		<h2>RSVP</h2>
-		<p>We have a selection of questions that we would like you to answer so we can make our final arrangements. Please can you let us know the answers as soon as possible. If you don’t do it now, we’ll just keep pestering you on a weekly basis until you do. We have a database. We know who you are. </p>
+		<p>We have a selection of questions that we would like you to answer so we can make our final arrangements. Please can you let us know the answers by February 14th. If you don’t, we’ll just keep pestering you on a weekly basis until you do. We have a database. We know who you are. </p>
 
-		<form action="/reply" method="POST">
+		<form action="/reply" method="POST" id="form-action">
 			<div class="form-section">
 				<h2>Your response</h2>
 				<div class="form-row">
-					<label>1. Tell us your name(s)?</label>
+					<a id="first-question" name="first-question"></a>
+					<label>1. Tell us your name(s)? <span class="required">*Required</span></label>
 					<p class="small">(If you're replying for more than yourself please can we have everyone's name, including kids, so we can get a head count)</p>
-					<input type="text" class="text" name="names"/>
+					<p class="validation-msg" id="validation-msg">Please can you tell us your name(s).</p>
+					<input type="text" class="text" name="names" id="names"/>
 				</div>
 
 				<div class="form-row">
-					<p class="label">2. Are you able to attend?</p>
+					<p class="label">2. Are you able to attend? <span class="required">*Required</span></p>
+					<p class="validation-msg" id="attending-msg">Please can you tell us whether you are able to attend.</p>
 					<label>
-						<input type="radio" class="radio" name="attending" value="y" />Yes
+						<input type="radio" class="radio" name="attending" value="y" id="attending"/>Yes
 					</label>
 					<label>
-						<input type="radio" class="radio" name="attending" value="n" />No
+						<input type="radio" class="radio" name="attending" value="n" id="notAttending"/>No
 					</label>
 				</div>
 
