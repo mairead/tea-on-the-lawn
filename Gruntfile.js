@@ -17,8 +17,19 @@ module.exports = function (grunt) {
         file: 'app.js'
       }
     },
+    minified : {
+      files: {
+        src: [
+        'public/js/*.js'
+        ],
+        dest: 'public/js/min/'
+      }
+    },
     sass: {
       dist: {
+        options: {
+          outputStyle: 'compressed'
+        },
         files: {
           'public/css/application.css' : 'sass/application.scss'
         }
@@ -50,9 +61,12 @@ module.exports = function (grunt) {
 
 
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-minified');
 
   grunt.config.requires('watch.js.files');
+
   files = grunt.config('watch.js.files');
+  
   files = grunt.file.expand(files);
 
   grunt.registerTask('delayed-livereload', 'Live reload after the node server has restarted.', function () {
@@ -68,6 +82,7 @@ module.exports = function (grunt) {
         });
     }, 500);
   });
-  grunt.registerTask('default', ['sass']);
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['minified', 'sass', 'watch']);
+  // grunt.registerTask('default', []);
+  // grunt.registerTask('default', []);
 };

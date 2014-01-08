@@ -87,7 +87,16 @@ $(document).ready(function () {
 		
 	});
 
+
+
 	var eatingLocations =[
+		{
+			name:"Stowford Manor Farm",
+			url: "http://www.stowfordmanorfarm.co.uk",
+			lat: "51.31811432866838",
+			lon: "-2.273397445678711",
+			summary: "Wedding venue"
+		},
 		{
 			name:"Hartley Farm",
 			url: "http://www.hartley-farm.co.uk",
@@ -134,6 +143,13 @@ $(document).ready(function () {
 	
 
 	var sleepingLocations =[
+		{
+			name:"Stowford Manor Farm",
+			url: "http://www.stowfordmanorfarm.co.uk",
+			lat: "51.31811432866838",
+			lon: "-2.273397445678711",
+			summary: "Wedding venue"
+		},
 		{
 			name:"Old Manor hotel",
 			url: "http://www.oldmanorhotel.com",
@@ -194,11 +210,13 @@ $(document).ready(function () {
 	  };
 	  var map = new google.maps.Map(document.getElementById("eating-map-canvas"),mapOptions);
 
+	  var markerImage;
 	  //custom marker graphic for hostel location
     var pinImage = new google.maps.MarkerImage("/img/marker-eating.png",
       new google.maps.Size(52, 74),
       new google.maps.Point(0,0),
       new google.maps.Point(26, 74));
+    
     var pinShadow = new google.maps.MarkerImage("/img/marker-shadow.png",
       new google.maps.Size(52, 74),
       new google.maps.Point(0, 0),
@@ -210,19 +228,25 @@ $(document).ready(function () {
       new google.maps.Point(0,0),
       new google.maps.Point(26, 74));
 
+    var venueImage = new google.maps.MarkerImage("/img/marker-venue.png",
+      new google.maps.Size(52, 74),
+      new google.maps.Point(0,0),
+      new google.maps.Point(26, 74));
 
     $(eatingLocations).each(function(i,v){
-
+    
     	if(v.name === "Sainsburys"){
-    		pinImage = cashImage;
+    		markerImage = cashImage;
+    	}else if(v.name === "Stowford Manor Farm"){
+    		markerImage = venueImage;
+    	}else{
+    		markerImage = pinImage;
     	}
-
-    	
 
 	    // Place marker
 	    var marker = new google.maps.Marker({
 		    map: map,
-		    icon: pinImage,
+		    icon: markerImage,
 		    shadow: pinShadow,
 		    position: new google.maps.LatLng(parseFloat(v.lat),parseFloat(v.lon))
 	    });
@@ -263,6 +287,8 @@ $(document).ready(function () {
 		map.fitBounds(latlngbounds);
 	}
 
+
+
 	//accommodation canvas
 	if($("#sleeping-map-canvas").length > 0){
 		//instantiate google map
@@ -285,6 +311,7 @@ $(document).ready(function () {
 	  var map = new google.maps.Map(document.getElementById("sleeping-map-canvas"),mapOptions);
 
 	  //custom marker graphic for hostel location
+	  var markerImage;
     var pinImage = new google.maps.MarkerImage("/img/marker-accommodation.png",
       new google.maps.Size(52, 74),
       new google.maps.Point(0,0),
@@ -294,12 +321,24 @@ $(document).ready(function () {
       new google.maps.Point(0, 0),
       new google.maps.Point(10, 74));
 
+     var venueImage = new google.maps.MarkerImage("/img/marker-venue.png",
+      new google.maps.Size(52, 74),
+      new google.maps.Point(0,0),
+      new google.maps.Point(26, 74));
+
 
     $(sleepingLocations).each(function(i,v){
+
+    	if(v.name === "Stowford Manor Farm"){
+    		markerImage = venueImage;
+    	}else{
+    		markerImage = pinImage;
+    	}
+
 	    // Place marker
 	    var marker = new google.maps.Marker({
 		    map: map,
-		    icon: pinImage,
+		    icon: markerImage,
 		    shadow: pinShadow,
 		    position: new google.maps.LatLng(parseFloat(v.lat),parseFloat(v.lon))
 	    });
@@ -326,7 +365,7 @@ $(document).ready(function () {
 
 	    //add marker to bounds object
   		boundsArray.push(new google.maps.LatLng(parseFloat(v.lat),parseFloat(v.lon)));
-    })
+    });
 
 		//zoom to fit all items in bounds array at end
 	  var latlngbounds = new google.maps.LatLngBounds();
