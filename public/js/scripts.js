@@ -422,7 +422,164 @@ $(document).ready(function () {
       infowindow.open(map, marker);
     });
 
+	};
+
+	//honeymoon locations
+	var honeymoonDestinations = [
+		{
+			location: "Stowford Manor Farm",
+			lat:"51.31811432866838",
+			lon:"-2.273397445678711"
+		},
+		{
+			location: "Portland Bill",
+			lat:"50.517956408330775",
+			lon:"-2.4546074867248535"
+		},
+		{
+			location: "Lyme Regis",
+			lat:"50.725154955049604",
+			lon:"-2.936643362045288"
+		},
+		{
+			location: "Budleigh Salterton",
+			lat:"50.63253216660307",
+			lon:"-3.320016860961914"
+		},
+		{
+			location: "Torquay",
+			lat:"50.46471649673749",
+			lon:"-3.525238037109375"
+		},
+		{
+			location: "Totnes",
+			lat:"50.43374151538998",
+			lon:"-3.6857950687408447"
+		},
+		{
+			location: "Salcombe",
+			lat:"50.23987696243864",
+			lon:"-3.767763376235962"
+		},
+		{
+			location: "Saltash",
+			lat:"50.23987696243864",
+			lon:"-3.767763376235962"
+		},
+		{
+			location: "St.Austell",
+			lat:"50.34357068638224",
+			lon:"-4.7946953773498535"
+		},
+		{
+			location: "Penryn",
+			lat:"50.17046647526639",
+			lon:"-5.107183456420898"
+		},
+		{
+			location: "Porthleven",
+			lat:"50.08694148515897",
+			lon:"-5.315580368041992"
+		}
+	]
+
+
+	if($("#honeymoon-map-canvas").length > 0){
+
+		var LatLong = new google.maps.LatLng(51.31811432866838, -2.273397445678711);
+
+	  var mapOptions = {
+	    center: LatLong,
+	    zoom: 8,
+	    mapTypeId: google.maps.MapTypeId.ROADMAP
+	  };
+	  var map = new google.maps.Map(document.getElementById("honeymoon-map-canvas"),mapOptions);
+		var directionsService = new google.maps.DirectionsService();
+
+
+		var pinImage = new google.maps.MarkerImage("/img/marker-travel.png",
+      new google.maps.Size(52, 74),
+      new google.maps.Point(0,0),
+      new google.maps.Point(26, 74));
+		var pinShadow = new google.maps.MarkerImage("/img/marker-shadow.png",
+      new google.maps.Size(52, 74),
+      new google.maps.Point(0, 0),
+      new google.maps.Point(10, 74));
+
+		function makeMarker( position) {
+		
+		 new google.maps.Marker({
+		  position: position,
+		  map: map,
+		  icon: pinImage,
+		  shadow: pinShadow
+		 });
+		}
+
+	function displayRoute() {  
+
+    var start = new google.maps.LatLng(51.31811432866838,-2.273397445678711);
+    var end = new google.maps.LatLng(50.08694148515897,-5.315580368041992);
+
+
+    var waypts = [
+    	{
+        location:new google.maps.LatLng(50.517956408330775,-2.4546074867248535)
+      },
+      {
+        location:new google.maps.LatLng(50.725154955049604,-2.936643362045288)
+      },
+      {
+        location:new google.maps.LatLng(50.63253216660307,-3.320016860961914)
+      },
+      {
+        location:new google.maps.LatLng(50.46471649673749,-3.525238037109375)
+      },
+      {
+        location:new google.maps.LatLng(50.43374151538998,-3.6857950687408447)
+      },
+      {
+        location:new google.maps.LatLng(50.23987696243864,-3.767763376235962)
+      },
+      {
+        location:new google.maps.LatLng(50.34357068638224,-4.7946953773498535)
+      },
+      {
+        location:new google.maps.LatLng(50.17046647526639,-5.107183456420898)
+      }
+    ];
+
+    var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers:true});// also, constructor can get "DirectionsRendererOptions" object
+    directionsDisplay.setMap(map); // map should be already initialized.
+
+    var request = {
+        origin : start,
+        destination : end,
+        travelMode : google.maps.TravelMode.DRIVING,
+        waypoints: waypts
+    };
+    directionsService.route(request, function(response, status) {
+    
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+
+					  var leg = response.routes[ 0 ].legs[0];
+
+					  var legs = response.routes[ 0 ].legs;
+
+					  //loop through legs
+					  for (var i = legs.length - 1; i >= 0; i--) {
+					  	makeMarker( legs[i].start_location);
+					  };
+
+					  //plot end point
+						makeMarker( legs[legs.length - 1].end_location);
+        }
+    });
+    
 	}
 
-})
+	displayRoute();
+}
 
+}); //end of doc ready
