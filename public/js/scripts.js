@@ -19,11 +19,17 @@ $(document).ready(function () {
 		var $no = $(e.target);
 		//if user selects no on attending
 		if(($no).is(':checked')){
+
+			//submit form to DB so no answer is counted
+
+			$("#form-action").submit();
 			//hide form with questions
-			$("#form-questions").hide();
-			//and display sorry message. 
-			$("#sorry-msg").show();
+			// $("#form-questions").hide();
+			// //and display sorry message. 
+			// $("#sorry-msg").show();
 		}
+
+
 	});
 
 	//client side validation on form
@@ -51,7 +57,7 @@ $(document).ready(function () {
 	//listen for click event on attending
 	$($attendingField, $notAttendingField).bind("click", function(e){
 		//determine if either field is clicked
-		if(!$attendingField.is(':checked') && !$attendingField.is(':checked')){
+		if(!$attendingField.is(':checked') && !$notAttendingField.is(':checked')){
 			//if both are empty show error message
 			$attendingMsg.show();
 		}else{
@@ -76,7 +82,8 @@ $(document).ready(function () {
 			scrollToAnchor('first-question');
 		}
 
-		if(!$attendingField.is(':checked') && !$attendingField.is(':checked')){
+		if(!$attendingField.is(':checked') && !$notAttendingField.is(':checked')){
+
 			//stop form submitting
 			e.preventDefault();
 			
