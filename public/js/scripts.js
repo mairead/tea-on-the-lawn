@@ -180,7 +180,7 @@ $(document).ready(function () {
 		},
 		{
 			name:"The George Inn",
-			url: "http://www.georgeinnsp.co.uk/home",
+			url: "http://www.georgeinnnsp.co.uk/home",
 			lat: "51.30078409992866",
 			lon: "-2.324960231781006",
 			summary: "Nice looking pub with rooms."
