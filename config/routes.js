@@ -17,6 +17,9 @@ module.exports = function(app){
 	var instructions = require('../app/controllers/instructions');
 	app.get('/instructions', instructions.index);
 
+	var photos = require('../app/controllers/photos');
+	app.get('/photos', photos.index);
+
 	var rsvp = require('../app/controllers/rsvp');
 	app.get('/rsvp', rsvp.index);
 	app.post('/reply', rsvp.reply);

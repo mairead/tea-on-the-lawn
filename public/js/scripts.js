@@ -498,16 +498,17 @@ $(document).ready(function () {
 	  var mapOptions = {
 	    center: LatLong,
 	    zoom: 8,
+	    maptypecontrol :false,
 	    mapTypeId: google.maps.MapTypeId.ROADMAP
 	  };
 	  var map = new google.maps.Map(document.getElementById("honeymoon-map-canvas"),mapOptions);
 		var directionsService = new google.maps.DirectionsService();
 
 
-		var pinImage = new google.maps.MarkerImage("/img/marker-travel.png",
-      new google.maps.Size(52, 74),
+		var pinImage = new google.maps.MarkerImage("/img/temp_marker.png",
+      new google.maps.Size(2, 2),
       new google.maps.Point(0,0),
-      new google.maps.Point(26, 74));
+      new google.maps.Point(2, 2));
 		var pinShadow = new google.maps.MarkerImage("/img/marker-shadow.png",
       new google.maps.Size(52, 74),
       new google.maps.Point(0, 0),
