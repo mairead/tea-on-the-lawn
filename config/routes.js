@@ -3,7 +3,7 @@
 module.exports = function(app){
 	//home route
 	var invitation = require('../app/controllers/invitation');
-	app.get('/', weloveyou.index);
+	app.get('/', invitation.index);
 
 	var accommodation = require('../app/controllers/accommodation');
 	app.get('/accommodation', accommodation.index);
@@ -25,6 +25,7 @@ module.exports = function(app){
 
 	var weloveyou = require('../app/controllers/weloveyou');
 	app.get('/weloveyou', weloveyou.index);
+	app.get('/', weloveyou.index);
 
 	// var rsvp = require('../app/controllers/rsvp');
 	// app.get('/rsvp', rsvp.index);
