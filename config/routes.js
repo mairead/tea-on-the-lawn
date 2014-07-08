@@ -26,11 +26,11 @@ module.exports = function(app){
 	var weloveyou = require('../app/controllers/weloveyou');
 	app.get('/weloveyou', weloveyou.index);
 
-	var rsvp = require('../app/controllers/rsvp');
-	app.get('/rsvp', rsvp.index);
-	app.post('/reply', rsvp.reply);
-	app.get('/thanks', rsvp.thanks);
-	app.get('/failure', rsvp.failure);
-	app.get('/replies', rsvp.replies);
-	app.get('/delete/:id', rsvp.delete);
+	// var rsvp = require('../app/controllers/rsvp');
+	// app.get('/rsvp', rsvp.index);
+	// app.post('/reply', rsvp.reply);
+	// app.get('/thanks', rsvp.thanks);
+	// app.get('/failure', rsvp.failure);
+	// app.get('/replies', rsvp.replies);
+	// app.get('/delete/:id', rsvp.delete);
 };
