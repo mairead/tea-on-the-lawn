@@ -162,6 +162,16 @@ body{
 		background: #fff;
 	}
 }
+
+.thankyou-item{
+	h3{
+		text-align: left;
+		color: #3f90a1;
+	}
+	padding: 10px 0 5px 0;
+	margin-bottom: 25px;
+	border-bottom: 1px solid #786D59;
+}
 //outer shell
 %outer-shell{
 	@include outer-container;
@@ -172,6 +182,21 @@ body{
   @include clearfix;
   padding:0;
 }
+
+.thanks-heading{
+	background: url(../img/thanks-heading.png) 0 0 no-repeat;
+	width:375px;
+	height:39px;
+	background-size: 375px 39px;
+	@extend .ir;
+	margin: 60px 0 20px 0;
+}
+.photography.thanks-photo{
+	text-align: center;
+	width: 375px;
+	margin: 0 auto;
+}
+
 
 //grid structure
 .main-content{
@@ -197,6 +222,7 @@ body{
 	background-size: 54px 76px;
 	@extend %outer-shell;
 	text-align: center;
+
 	.nav-shim{
 		padding-bottom: 20px;
 		padding-right: 24px;
@@ -226,6 +252,25 @@ body{
 	.rsvp a{
 		color:#E65D4B;
 	}
+
+}
+
+.secondary{
+	width: 500px;
+	background: url(../img/secondary-nav-banner-left.png) 0 0 no-repeat;
+	.secondary-shim{
+		background: url(../img/secondary-nav-banner-right.png) right -1px no-repeat;
+	}
+	ul{
+		background: #E65D4B;
+	}
+	a{
+		padding:10px 15px;
+	}
+	.active a, .active.rsvp a{
+		color:#FFEFD9;
+	}
+
 }
 
 //forms
@@ -274,11 +319,9 @@ body{
 //photos
 
 .photography{
-
 	background : #fff;
 	padding : 3px;
-	border : black 2px solid;
-	margin : 10px;
+	margin : 10px 0;
 	display:block;
 }
 
@@ -350,7 +393,7 @@ body{
 		background: none;
 		border:0;
 		padding:0;
-		margin-bottom:10px;
+		
 		.nav-shim{
 			background: none;
 			padding:0;
@@ -385,7 +428,13 @@ body{
 			}
 		}
 	}
-
+	.secondary{
+		width: auto;
+		margin-bottom: 10px;
+		a{
+			background-color:#E65D4B;
+		}
+	}
 	.footer{
 		background: #191105;
 		margin:0;
